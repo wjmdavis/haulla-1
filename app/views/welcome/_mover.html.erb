@@ -1,4 +1,4 @@
-<%= form_for(@mover) do |f| %>
+<%= form_for @mover do |f| %>
   <% if @mover.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mover.errors.count, "error") %> prohibited this mover from being saved:</h2>
@@ -11,7 +11,22 @@
     </div>
   <% end %>
 
+  <%= f.text_field :name, :placeholder => "Full Name" %><br>
+
+  <%= f.label :estimated_time %>
+  <%= f.select :estimated_time, [1,2,3,4,5, 6] %><%= " hours" %><br>
+
+  <%= f.telephone_field :phone, :placeholder => "e.g. (858) 449 4180" %><br>
+
+  <%= f.label :move_time, "When you trying to move" %>
+  <%= f.datetime_select :move_time %><br>
+
+  <%= f.label :distance, "Estimated Distance" %>
+  <%= f.number_field :distance, :placeholder => "e.g. 1.5, 5" %><%= " miles" %><br>
+
+  <%= f.text_area :description, :placeholder => "Job Desciption" %><br>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>

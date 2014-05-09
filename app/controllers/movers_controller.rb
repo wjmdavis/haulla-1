@@ -5,6 +5,7 @@ class MoversController < ApplicationController
   # GET /movers.json
   def index
     @movers = Mover.all
+
   end
 
   # GET /movers/1
@@ -69,6 +70,8 @@ class MoversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mover_params
-      params[:mover]
+      params.require(:mover).permit(:name, :distance, :estimated_time, :move_time, :description)
     end
 end
+
+ 
