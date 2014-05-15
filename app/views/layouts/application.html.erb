@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html class=<%= yield (:background_class) %> lang="en">
 <head>
   <title>DavisSite</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Dosis:400,200,600' rel='stylesheet' type='text/css'>
+
+   
+
+    <title><%= yield (:title) %> | Haulla</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS for the 'Full' Template -->
+    <link href="css/the-big-picture.css" rel="stylesheet">
 </head>
-<body>
+
+
+    <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Haulla</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about">How it Works</a>
+                    </li>
+                    
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
 <% if notice %>
 		<p class="notice alert-warning"><%= notice %></p>
 
@@ -18,5 +59,17 @@
 
 <%= yield %>
 
+
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
 </body>
 </html>
+
+
+<!-- The full page image background will only work if the html has the custom class set to it! Don't delete it! -->
+
+
